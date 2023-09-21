@@ -114,7 +114,7 @@ body {
   rotate: -60deg;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 640px) {
   .card {
     width: 100%;
     min-height: 100vh;
