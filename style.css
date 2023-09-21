@@ -15,15 +15,12 @@ body {
 .card {
   position: relative;
   width: 100%;
-  max-width: 320px;
   height: 100vh;
-  max-height: 550px;
   overflow: hidden;
   background: linear-gradient(#47d6f9, #c4effe);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 15px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -112,13 +109,4 @@ body {
   right: -12%;
   top: 35%;
   rotate: -60deg;
-}
-
-@media screen and (max-width: 640px) {
-  .card {
-    width: 100%;
-    min-height: 100vh;
-    box-shadow: none;
-    border-radius: 0px;
-  }
 }
