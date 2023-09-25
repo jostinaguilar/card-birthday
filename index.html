@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="./emoji.svg" type="image/x-icon" />
     <title>Marco's Birthday</title>
-    <script type="module" crossorigin src="./assets/index-718e9c33.js"></script>
-    <link rel="stylesheet" href="./assets/index-a176d72b.css" />
+    <script type="module" crossorigin src="./assets/index-5532a29a.js"></script>
+    <link rel="stylesheet" href="./assets/index-30760169.css" />
   </head>
   <body>
     <main class="card">
       <div class="card-content">
         <img class="flags" src="./flags.svg" alt="Banderines" />
-        <img class="bartolito" src="./bartolito.png" alt="Bartolito" />
-        <img class="pollito" src="./pollito.png" alt="Pollito" />
+        <div class="container-bartolito">
+          <span class="tooltip tooltip-bartolito">🕒 Hora</span>
+          <img class="bartolito" src="./bartolito.png" alt="Bartolito" />
+        </div>
+        <div class="container-pollito">
+          <span class="tooltip tooltip-pollito">📆 Día</span>
+          <img class="pollito" src="./pollito.png" alt="Pollito" />
+        </div>
         <div class="sky">
           <img class="clouds" src="./nubes.svg" alt="Nubes" />
           <p class="guest">ESTÁS INVITADO</p>
@@ -25,8 +31,12 @@
           </div>
         </div>
         <img class="grass" src="./granja.svg" alt="Granja" />
-        <img class="zenon" src="./zenon.png" alt="Campo" />
+        <div class="container-zenon">
+          <span class="tooltip tooltip-zenon">🏠 Lugar</span>
+          <img class="zenon" src="./zenon.png" alt="Campo" />
+        </div>
       </div>
+      <img class="logo" src="./logo.png" alt="La Granja de Zenón" />
     </main>
   </body>
 </html>
