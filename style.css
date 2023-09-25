@@ -85,13 +85,13 @@ body {
 .zenon {
   position: absolute;
   bottom: 2px;
-  height: 42%;
+  height: 40%;
   left: 20px;
 }
 
 .pollito {
   position: absolute;
-  height: 25%;
+  height: 24%;
   left: -15%;
   top: 30%;
   rotate: 80deg;
@@ -100,7 +100,7 @@ body {
 .bartolito {
   position: absolute;
   z-index: 10;
-  height: 30%;
+  height: 28%;
   right: -15%;
   top: 35%;
   rotate: -60deg;
