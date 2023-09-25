@@ -30,7 +30,6 @@ body {
 
 .sky {
   width: 100%;
-  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +39,6 @@ body {
 
 .grass {
   width: 100%;
-  height: 40%;
 }
 
 .clouds {
@@ -56,24 +54,25 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
 }
 
 .name {
-  width: 200px;
+  width: 65%;
 }
 
 .birth {
-  width: 110px;
+  width: 40%;
 }
 
 .one {
-  height: 80px;
+  height: 110%;
 }
 
 .guest {
+  font-family: system-ui, -apple-system, sans-serif;
   font-weight: 600;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .flags {
@@ -85,24 +84,24 @@ body {
 
 .zenon {
   position: absolute;
-  bottom: 5px;
-  height: 230px;
+  bottom: 2px;
+  height: 42%;
   left: 20px;
 }
 
 .pollito {
   position: absolute;
-  height: 120px;
-  left: -12%;
+  height: 25%;
+  left: -15%;
   top: 30%;
-  rotate: 60deg;
+  rotate: 80deg;
 }
 
 .bartolito {
   position: absolute;
   z-index: 10;
-  height: 150px;
-  right: -12%;
+  height: 30%;
+  right: -15%;
   top: 35%;
   rotate: -60deg;
 }
