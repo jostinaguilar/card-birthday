@@ -1,5 +1,11 @@
 import confetti from "canvas-confetti";
 import anime from "animejs";
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
+
+const btnPollito = document.querySelector(".pollito");
+const btnBartolito = document.querySelector(".bartolito");
+const btnZenon = document.querySelector(".zenon");
 
 function adjustScreen() {
   const card = document.querySelector(".card");
@@ -10,7 +16,9 @@ function adjustScreen() {
 
 window.addEventListener("DOMContentLoaded", () => {
   adjustScreen();
+});
 
+window.addEventListener("load", () => {
   anime({
     targets: ".name",
     scale: 0,
@@ -56,10 +64,61 @@ window.addEventListener("DOMContentLoaded", () => {
       spread: 50,
       gravity: 0.5,
       origin: { y: 0.75 },
-      scalar: 0.8,
+      scalar: 0.9,
       //colors: ["#780CF6", "#300BD4", "#1728EB", "#0B50D4", "#0C9BF6"],
     });
   }, 500);
+});
+
+btnPollito.addEventListener("click", () => {
+  Toastify({
+    text: "📆 29 de Octubre",
+    duration: 2000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      width: "fit-content",
+      background: "#A05B0F",
+      fontSize: "14px",
+      fontWeight: "600",
+      borderRadius: "10px",
+    },
+  }).showToast();
+});
+
+btnBartolito.addEventListener("click", () => {
+  Toastify({
+    text: "🕒 3:00 PM",
+    duration: 10000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      width: "fit-content",
+      background: "#A05B0F",
+      fontSize: "14px",
+      fontWeight: "600",
+      borderRadius: "10px",
+    },
+  }).showToast();
+});
+
+btnZenon.addEventListener("click", () => {
+  Toastify({
+    text: "🏠 Su Casa",
+    duration: 10000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      width: "fit-content",
+      background: "#A05B0F",
+      fontSize: "14px",
+      fontWeight: "600",
+      borderRadius: "10px",
+    },
+  }).showToast();
 });
 
 window.addEventListener("resize", adjustScreen);

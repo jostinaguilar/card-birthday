@@ -6,6 +6,7 @@
 
 body {
   background-color: #202020;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .card {
@@ -38,7 +39,9 @@ body {
 }
 
 .grass {
+  position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .clouds {
@@ -70,7 +73,6 @@ body {
 }
 
 .guest {
-  font-family: system-ui, -apple-system, sans-serif;
   font-weight: 600;
   padding-bottom: 10px;
 }
@@ -82,26 +84,89 @@ body {
   padding-top: 10px;
 }
 
-.zenon {
+.container-zenon {
   position: absolute;
-  bottom: 2px;
   height: 40%;
+  bottom: 2px;
   left: 20px;
+  z-index: 2;
 }
 
-.pollito {
+.container-pollito {
   position: absolute;
   height: 24%;
   left: -15%;
   top: 30%;
-  rotate: 80deg;
+  z-index: 2;
 }
 
-.bartolito {
+.container-bartolito {
   position: absolute;
   z-index: 10;
   height: 28%;
   right: -15%;
   top: 35%;
+  z-index: 2;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.tooltip-pollito {
+  right: -30%;
+  top: 70%;
+}
+
+.tooltip-bartolito {
+  left: -10%;
+  top: 60%;
+}
+
+.tooltip-zenon {
+  right: -40%;
+  top: 35%;
+}
+
+.zenon {
+  height: 100%;
+}
+
+.pollito {
+  height: 100%;
+  rotate: 70deg;
+}
+
+.bartolito {
+  height: 100%;
   rotate: -60deg;
+}
+
+.toast {
+  width: fit-content;
+  background-color: brown;
+}
+
+.logo {
+  position: absolute;
+  z-index: 10;
+  width: 25%;
+  bottom: 15px;
+  right: 20px;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
