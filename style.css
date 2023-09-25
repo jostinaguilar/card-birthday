@@ -5,15 +5,13 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh;
   background-color: #202020;
 }
 
 .card {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   background: linear-gradient(#47d6f9, #c4effe);
   display: flex;

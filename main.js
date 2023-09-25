@@ -1,6 +1,15 @@
 import confetti from "canvas-confetti";
 
+function adjustScreen() {
+  const card = document.querySelector(".card");
+  const viewHeight = window.innerHeight;
+
+  card.style.height = `${viewHeight}px`;
+}
+
 window.addEventListener("DOMContentLoaded", () => {
+  adjustScreen();
+
   setTimeout(() => {
     confetti({
       particleCount: 150,
@@ -12,3 +21,5 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }, 400);
 });
+
+window.addEventListener("resize", adjustScreen);
