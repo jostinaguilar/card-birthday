@@ -4,10 +4,23 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 const btnAcceppt = document.getElementById("accept");
-const card = document.querySelector(".card");
+const invitation = document.getElementById("card");
+const modal = document.getElementById("modal");
+
+const url = window.location.href;
+const name = document.getElementById("name");
+const found = document.getElementById("found");
+const notFound = document.getElementById("not-found");
+
+const btnPollito = document.querySelector(".pollito");
+const btnBartolito = document.querySelector(".bartolito");
+const btnZenon = document.querySelector(".zenon");
+
+const tooltipPollito = document.querySelector(".tooltip-pollito");
+const tooltipBartolito = document.querySelector(".tooltip-bartolito");
+const tooltipZenon = document.querySelector(".tooltip-zenon");
 
 function adjustScreen() {
-  const card = document.querySelector(".card");
   const viewHeight = window.innerHeight;
 
   card.style.height = `${viewHeight}px`;
@@ -37,12 +50,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("load", () => {
-  const url = window.location.href;
-  const name = document.getElementById("name");
-  const modal = document.querySelector(".modal");
-  const template = document.getElementById("not-found");
-  const clone = document.importNode(template.content, true);
-
   const urlObject = new URL(url);
   const guestUrl = urlObject.searchParams.get("guest");
 
@@ -54,22 +61,26 @@ window.addEventListener("load", () => {
         if (newGuest[0] !== undefined) {
           name.innerText = newGuest[0].guest;
         } else {
-          modal.innerHTML = "";
-          modal.appendChild(clone);
+          found.classList.remove("block");
+          found.classList.add("hidden");
+          notFound.classList.remove("hidden");
+          notFound.classList.add("block");
         }
       });
   } else {
-    modal.innerHTML = "";
-    modal.appendChild(clone);
+    found.classList.remove("block");
+    found.classList.add("hidden");
+    notFound.classList.remove("hidden");
+    notFound.classList.add("block");
   }
 });
 
 btnAcceppt.addEventListener("click", () => {
-  const template = document.getElementById("invitation");
-  const clone = document.importNode(template.content, true);
+  modal.classList.remove("block");
+  modal.classList.add("hidden");
 
-  card.innerHTML = "";
-  card.appendChild(clone);
+  invitation.classList.remove("hidden");
+  invitation.classList.add("block");
 
   anime({
     targets: ".card-content",
@@ -129,72 +140,64 @@ btnAcceppt.addEventListener("click", () => {
       //colors: ["#780CF6", "#300BD4", "#1728EB", "#0B50D4", "#0C9BF6"],
     });
   }, 500);
-
-  const btnPollito = document.querySelector(".pollito");
-  const btnBartolito = document.querySelector(".bartolito");
-  const btnZenon = document.querySelector(".zenon");
-
-  const tooltipPollito = document.querySelector(".tooltip-pollito");
-  const tooltipBartolito = document.querySelector(".tooltip-bartolito");
-  const tooltipZenon = document.querySelector(".tooltip-zenon");
-
-  btnPollito.addEventListener("click", () => {
-    toast("🗓️ 29 de Octubre");
-  });
-
-  tooltipPollito.addEventListener("click", () => {
-    toast("🗓️ 29 de Octubre");
-  });
-
-  btnBartolito.addEventListener("click", () => {
-    toast("🕒 3:00 PM ");
-  });
-
-  tooltipBartolito.addEventListener("click", () => {
-    toast("🕒 3:00 PM ");
-  });
-
-  btnZenon.addEventListener("click", () => {
-    Toastify({
-      text: "🏠 Ver ubicación",
-      duration: 5000,
-      gravity: "bottom",
-      position: "right",
-      stopOnFocus: true,
-      selector: "card",
-      destination: "https://maps.app.goo.gl/5zSwWdCufRevmndT8",
-      newWindow: true,
-      style: {
-        position: "absolute",
-        width: "fit-content",
-        background: "#A05B0F",
-        fontSize: "14px",
-        fontWeight: "600",
-        borderRadius: "10px",
-      },
-    }).showToast();
-  });
-
-  tooltipZenon.addEventListener("click", () => {
-    Toastify({
-      text: "🏠 Ver ubicación",
-      duration: 5000,
-      gravity: "bottom",
-      position: "right",
-      stopOnFocus: true,
-      selector: "card",
-      destination: "https://maps.app.goo.gl/5zSwWdCufRevmndT8",
-      newWindow: true,
-      style: {
-        position: "absolute",
-        width: "fit-content",
-        background: "#A05B0F",
-        fontSize: "14px",
-        fontWeight: "600",
-        borderRadius: "10px",
-      },
-    }).showToast();
-  });
 });
 
 window.addEventListener("resize", adjustScreen);
+
+btnPollito.addEventListener("click", () => {
+  toast("🗓️ 29 de Octubre");
+});
+
+tooltipPollito.addEventListener("click", () => {
+  toast("🗓️ 29 de Octubre");
+});
+
+btnBartolito.addEventListener("click", () => {
+  toast("🕒 3:00 PM ");
+});
+
+tooltipBartolito.addEventListener("click", () => {
+  toast("🕒 3:00 PM ");
+});
+
+btnZenon.addEventListener("click", () => {
+  Toastify({
+    text: "🏠 Ver ubicación",
+    duration: 5000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    selector: "card",
+    destination: "https://maps.app.goo.gl/5zSwWdCufRevmndT8",
+    newWindow: true,
+    style: {
+      position: "absolute",
+      width: "fit-content",
+      background: "#A05B0F",
+      fontSize: "14px",
+      fontWeight: "600",
+      borderRadius: "10px",
+    },
+  }).showToast();
+});
+
+tooltipZenon.addEventListener("click", () => {
+  Toastify({
+    text: "🏠 Ver ubicación",
+    duration: 5000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    selector: "card",
+    destination: "https://maps.app.goo.gl/5zSwWdCufRevmndT8",
+    newWindow: true,
+    style: {
+      position: "absolute",
+      width: "fit-content",
+      background: "#A05B0F",
+      fontSize: "14px",
+      fontWeight: "600",
+      borderRadius: "10px",
+    },
+  }).showToast();
+});
