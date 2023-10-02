@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
   const guestUrl = urlObject.searchParams.get("guest");
 
   if (guestUrl !== null) {
-    fetch("./guests.json")
+    fetch("guests.json")
       .then((res) => res.json())
       .then((data) => {
         const newGuest = data.filter((guest) => guest.id === guestUrl);
