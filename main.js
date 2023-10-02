@@ -3,6 +3,8 @@ import anime from "animejs";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
+const card = document.querySelector(".card");
+
 const btnAcceppt = document.getElementById("accept");
 const invitation = document.getElementById("card");
 const modal = document.getElementById("modal");
