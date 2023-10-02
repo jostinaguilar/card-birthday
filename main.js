@@ -7,11 +7,34 @@ const btnPollito = document.querySelector(".pollito");
 const btnBartolito = document.querySelector(".bartolito");
 const btnZenon = document.querySelector(".zenon");
 
+const tooltipPollito = document.querySelector(".tooltip-pollito");
+const tooltipBartolito = document.querySelector(".tooltip-bartolito");
+const tooltipZenon = document.querySelector(".tooltip-zenon");
+
 function adjustScreen() {
   const card = document.querySelector(".card");
   const viewHeight = window.innerHeight;
 
   card.style.height = `${viewHeight}px`;
+}
+
+function toast(text) {
+  Toastify({
+    text: text,
+    duration: 3000,
+    gravity: "bottom",
+    position: "right",
+    stopOnFocus: true,
+    selector: "card",
+    style: {
+      position: "absolute",
+      width: "fit-content",
+      background: "#A05B0F",
+      fontSize: "14px",
+      fontWeight: "600",
+      borderRadius: "10px",
+    },
+  }).showToast();
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -71,54 +94,27 @@ window.addEventListener("load", () => {
 });
 
 btnPollito.addEventListener("click", () => {
-  Toastify({
-    text: "📆 29 de Octubre",
-    duration: 2000,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: true,
-    style: {
-      width: "fit-content",
-      background: "#A05B0F",
-      fontSize: "14px",
-      fontWeight: "600",
-      borderRadius: "10px",
-    },
-  }).showToast();
+  toast("🗓️ 29 de Octubre");
+});
+
+tooltipPollito.addEventListener("click", () => {
+  toast("🗓️ 29 de Octubre");
 });
 
 btnBartolito.addEventListener("click", () => {
-  Toastify({
-    text: "🕒 3:00 PM",
-    duration: 10000,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: true,
-    style: {
-      width: "fit-content",
-      background: "#A05B0F",
-      fontSize: "14px",
-      fontWeight: "600",
-      borderRadius: "10px",
-    },
-  }).showToast();
+  toast("🕒 3:00 PM ");
+});
+
+tooltipBartolito.addEventListener("click", () => {
+  toast("🕒 3:00 PM ");
 });
 
 btnZenon.addEventListener("click", () => {
-  Toastify({
-    text: "🏠 Su Casa",
-    duration: 10000,
-    gravity: "bottom",
-    position: "right",
-    stopOnFocus: true,
-    style: {
-      width: "fit-content",
-      background: "#A05B0F",
-      fontSize: "14px",
-      fontWeight: "600",
-      borderRadius: "10px",
-    },
-  }).showToast();
+  toast("🏠 Su Casa");
+});
+
+tooltipZenon.addEventListener("click", () => {
+  toast("🏠 Su Casa");
 });
 
 window.addEventListener("resize", adjustScreen);
