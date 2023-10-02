@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background-color: #202020;
   font-family: "Poppins", sans-serif;

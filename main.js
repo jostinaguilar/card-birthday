@@ -74,6 +74,8 @@ btnAcceppt.addEventListener("click", () => {
   anime({
     targets: ".name",
     scale: 0,
+    delay: 200,
+    endDelay: 200,
     direction: "reverse",
     easing: "easeInElastic(1, .6)",
   });
@@ -82,8 +84,8 @@ btnAcceppt.addEventListener("click", () => {
     targets: ".birth",
     scale: 0,
     direction: "reverse",
-    delay: 200,
-    endDelay: 200,
+    delay: 400,
+    endDelay: 400,
     easing: "easeInElastic(1, .6)",
   });
 
@@ -91,8 +93,8 @@ btnAcceppt.addEventListener("click", () => {
     targets: ".one",
     scale: 0,
     direction: "reverse",
-    delay: 400,
-    endDelay: 400,
+    delay: 600,
+    endDelay: 600,
     easing: "easeInElastic(1, .6)",
   });
 
@@ -106,6 +108,8 @@ btnAcceppt.addEventListener("click", () => {
   anime({
     targets: [".zenon", ".pollito", ".bartolito"],
     translateY: 200,
+    delay: 200,
+    endDelay: 200,
     direction: "reverse",
     easing: "easeInOutSine",
   });
