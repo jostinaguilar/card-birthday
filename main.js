@@ -72,6 +72,13 @@ btnAcceppt.addEventListener("click", () => {
   card.appendChild(clone);
 
   anime({
+    targets: ".card-content",
+    scale: 0,
+    direction: "reverse",
+    easing: "easeInElastic(1, .6)",
+  });
+
+  anime({
     targets: ".name",
     scale: 0,
     delay: 200,
