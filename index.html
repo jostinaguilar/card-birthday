@@ -12,50 +12,50 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/index-6165b0b2.js"></script>
-    <link rel="stylesheet" href="./assets/index-60ac7178.css" />
+    <script type="module" crossorigin src="./assets/index-49125a8d.js"></script>
+    <link rel="stylesheet" href="./assets/index-bc4b77b2.css" />
   </head>
   <body>
     <main class="card">
-      <div class="modal">
-        <span class="emoji">🥳</span>
-        <h2>Hola, <span id="name"></span></h2>
-        <p>Tienes una <span>invitación especial</span></p>
-        <button type="button" id="accept">Aceptar</button>
-        <template id="not-found">
+      <div class="modal block" id="modal">
+        <div id="found" class="block">
+          <span class="emoji">🥳</span>
+          <h2>Hola, <span id="name"></span></h2>
+          <p>Tienes una <span>invitación especial</span></p>
+          <button type="button" id="accept">Aceptar</button>
+        </div>
+        <div id="not-found" class="hidden">
           <span class="emoji">🙁</span>
           <h2>Oops!</h2>
           <p>No encontramos la invitación</p>
-        </template>
-      </div>
-      <template id="invitation">
-        <div class="card-content" id="card">
-          <img class="flags" src="./flags.svg" alt="Banderines" />
-          <div class="container-bartolito">
-            <span class="tooltip tooltip-bartolito">🕒 Hora</span>
-            <img class="bartolito" src="./bartolito.png" alt="Bartolito" />
-          </div>
-          <div class="container-pollito">
-            <span class="tooltip tooltip-pollito">📆 Día</span>
-            <img class="pollito" src="./pollito.png" alt="Pollito" />
-          </div>
-          <div class="sky">
-            <img class="clouds" src="./nubes.svg" alt="Nubes" />
-            <p class="guest">ESTÁS INVITADO</p>
-            <div class="letters">
-              <img class="name" src="./name.svg" alt="Marco" />
-              <img class="birth" src="./cumple.svg" alt="Cumple" />
-              <img class="one" src="./one.svg" alt="Uno" />
-            </div>
-          </div>
-          <img class="grass" src="./granja.svg" alt="Granja" />
-          <div class="container-zenon">
-            <span class="tooltip tooltip-zenon">🏠 Lugar</span>
-            <img class="zenon" src="./zenon.png" alt="Campo" />
-          </div>
-          <img class="logo" src="./logo.png" alt="La Granja de Zenón" />
         </div>
-      </template>
+      </div>
+      <div class="card-content hidden" id="card">
+        <img class="flags" src="./flags.svg" alt="Banderines" />
+        <div class="container-bartolito">
+          <span class="tooltip tooltip-bartolito">🕒 Hora</span>
+          <img class="bartolito" src="./bartolito.png" alt="Bartolito" />
+        </div>
+        <div class="container-pollito">
+          <span class="tooltip tooltip-pollito">📆 Día</span>
+          <img class="pollito" src="./pollito.png" alt="Pollito" />
+        </div>
+        <div class="sky">
+          <img class="clouds" src="./nubes.svg" alt="Nubes" />
+          <p class="guest">ESTÁS INVITADO</p>
+          <div class="letters">
+            <img class="name" src="./name.svg" alt="Marco" />
+            <img class="birth" src="./cumple.svg" alt="Cumple" />
+            <img class="one" src="./one.svg" alt="Uno" />
+          </div>
+        </div>
+        <img class="grass" src="./granja.svg" alt="Granja" />
+        <div class="container-zenon">
+          <span class="tooltip tooltip-zenon">🏠 Lugar</span>
+          <img class="zenon" src="./zenon.png" alt="Campo" />
+        </div>
+        <img class="logo" src="./logo.png" alt="La Granja de Zenón" />
+      </div>
     </main>
   </body>
 </html>
