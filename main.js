@@ -3,13 +3,8 @@ import anime from "animejs";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
-const btnPollito = document.querySelector(".pollito");
-const btnBartolito = document.querySelector(".bartolito");
-const btnZenon = document.querySelector(".zenon");
-
-const tooltipPollito = document.querySelector(".tooltip-pollito");
-const tooltipBartolito = document.querySelector(".tooltip-bartolito");
-const tooltipZenon = document.querySelector(".tooltip-zenon");
+const btnAcceppt = document.getElementById("accept");
+const card = document.querySelector(".card");
 
 function adjustScreen() {
   const card = document.querySelector(".card");
@@ -21,7 +16,7 @@ function adjustScreen() {
 function toast(text) {
   Toastify({
     text: text,
-    duration: 3000,
+    duration: 5000,
     gravity: "bottom",
     position: "right",
     stopOnFocus: true,
@@ -42,6 +37,40 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("load", () => {
+  const url = window.location.href;
+  const name = document.getElementById("name");
+  const modal = document.querySelector(".modal");
+  const template = document.getElementById("not-found");
+  const clone = document.importNode(template.content, true);
+
+  const urlObject = new URL(url);
+  const guestUrl = urlObject.searchParams.get("guest");
+
+  if (guestUrl !== null) {
+    fetch("./guests.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const newGuest = data.filter((guest) => guest.id === guestUrl);
+        if (newGuest[0] !== undefined) {
+          name.innerText = newGuest[0].guest;
+        } else {
+          modal.innerHTML = "";
+          modal.appendChild(clone);
+        }
+      });
+  } else {
+    modal.innerHTML = "";
+    modal.appendChild(clone);
+  }
+});
+
+btnAcceppt.addEventListener("click", () => {
+  const template = document.getElementById("invitation");
+  const clone = document.importNode(template.content, true);
+
+  card.innerHTML = "";
+  card.appendChild(clone);
+
   anime({
     targets: ".name",
     scale: 0,
@@ -91,30 +120,38 @@ window.addEventListener("load", () => {
       //colors: ["#780CF6", "#300BD4", "#1728EB", "#0B50D4", "#0C9BF6"],
     });
   }, 500);
-});
 
-btnPollito.addEventListener("click", () => {
-  toast("🗓️ 29 de Octubre");
-});
+  const btnPollito = document.querySelector(".pollito");
+  const btnBartolito = document.querySelector(".bartolito");
+  const btnZenon = document.querySelector(".zenon");
 
-tooltipPollito.addEventListener("click", () => {
-  toast("🗓️ 29 de Octubre");
-});
+  const tooltipPollito = document.querySelector(".tooltip-pollito");
+  const tooltipBartolito = document.querySelector(".tooltip-bartolito");
+  const tooltipZenon = document.querySelector(".tooltip-zenon");
 
-btnBartolito.addEventListener("click", () => {
-  toast("🕒 3:00 PM ");
-});
+  btnPollito.addEventListener("click", () => {
+    toast("🗓️ 29 de Octubre");
+  });
 
-tooltipBartolito.addEventListener("click", () => {
-  toast("🕒 3:00 PM ");
-});
+  tooltipPollito.addEventListener("click", () => {
+    toast("🗓️ 29 de Octubre");
+  });
 
-btnZenon.addEventListener("click", () => {
-  toast("🏠 Su Casa");
-});
+  btnBartolito.addEventListener("click", () => {
+    toast("🕒 3:00 PM ");
+  });
 
-tooltipZenon.addEventListener("click", () => {
-  toast("🏠 Su Casa");
+  tooltipBartolito.addEventListener("click", () => {
+    toast("🕒 3:00 PM ");
+  });
+
+  btnZenon.addEventListener("click", () => {
+    toast("🏠 Su Casa");
+  });
+
+  tooltipZenon.addEventListener("click", () => {
+    toast("🏠 Su Casa");
+  });
 });
 
 window.addEventListener("resize", adjustScreen);
