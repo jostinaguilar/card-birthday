@@ -75,7 +75,7 @@ btnAcceppt.addEventListener("click", () => {
     targets: ".card-content",
     scale: 0,
     direction: "reverse",
-    easing: "easeInElastic(1, .6)",
+    easing: "easeInElastic(1, 0.5)",
   });
 
   anime({
@@ -115,8 +115,6 @@ btnAcceppt.addEventListener("click", () => {
   anime({
     targets: [".zenon", ".pollito", ".bartolito"],
     translateY: 200,
-    delay: 200,
-    endDelay: 200,
     direction: "reverse",
     easing: "easeInOutSine",
   });
@@ -157,11 +155,45 @@ btnAcceppt.addEventListener("click", () => {
   });
 
   btnZenon.addEventListener("click", () => {
-    toast("🏠 Su Casa");
+    Toastify({
+      text: "🏠 Ver ubicación",
+      duration: 5000,
+      gravity: "bottom",
+      position: "right",
+      stopOnFocus: true,
+      selector: "card",
+      destination: "https://maps.app.goo.gl/5zSwWdCufRevmndT8",
+      newWindow: true,
+      style: {
+        position: "absolute",
+        width: "fit-content",
+        background: "#A05B0F",
+        fontSize: "14px",
+        fontWeight: "600",
+        borderRadius: "10px",
+      },
+    }).showToast();
   });
 
   tooltipZenon.addEventListener("click", () => {
-    toast("🏠 Su Casa");
+    Toastify({
+      text: "🏠 Ver ubicación",
+      duration: 5000,
+      gravity: "bottom",
+      position: "right",
+      stopOnFocus: true,
+      selector: "card",
+      destination: "https://maps.app.goo.gl/5zSwWdCufRevmndT8",
+      newWindow: true,
+      style: {
+        position: "absolute",
+        width: "fit-content",
+        background: "#A05B0F",
+        fontSize: "14px",
+        fontWeight: "600",
+        borderRadius: "10px",
+      },
+    }).showToast();
   });
 });
 

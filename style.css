@@ -213,7 +213,7 @@ body {
   font-weight: 700;
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 520px) {
   .card {
     width: 375px;
     margin: 0 auto;
