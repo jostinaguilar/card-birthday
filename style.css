@@ -178,9 +178,6 @@ body {
   border-radius: 20px;
   box-shadow: 1px 1px 15px hsla(0, 0%, 0%, 0.25);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .emoji {
@@ -214,7 +211,9 @@ body {
 }
 
 .block {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .hidden {
