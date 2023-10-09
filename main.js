@@ -79,10 +79,12 @@ window.addEventListener("load", () => {
         }
       });
   } else {
-    notFound.classList.remove("block");
-    notFound.classList.add("hidden");
+    notFound.classList.remove("hidden");
+    notFound.classList.add("block");
     // found.classList.remove("hidden");
     // found.classList.add("block");
+    spinner.classList.remove("block");
+    spinner.classList.add("hidden");
   }
 });
 
