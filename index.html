@@ -16,7 +16,7 @@
   <body>
     <main class="card">
       <div class="modal block" id="modal">
-        <div id="found" class="block">
+        <div id="found" class="hidden">
           <span class="emoji">🥳</span>
           <h2>Hola, <span id="name"></span></h2>
           <p>Tienes una <span>invitación especial</span></p>
@@ -27,6 +27,7 @@
           <h2>Oops!</h2>
           <p>No encontramos la invitación</p>
         </div>
+        <div class="spinner block"></div>
       </div>
       <div class="card-content hidden" id="card">
         <img class="flags" src="./flags.svg" alt="Banderines" />

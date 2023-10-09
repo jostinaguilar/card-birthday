@@ -8,6 +8,7 @@ const card = document.querySelector(".card");
 const btnAcceppt = document.getElementById("accept");
 const invitation = document.getElementById("card");
 const modal = document.getElementById("modal");
+const spinner = document.querySelector(".spinner");
 
 const url = window.location.href;
 const name = document.getElementById("name");
@@ -62,18 +63,26 @@ window.addEventListener("load", () => {
         const newGuest = data.filter((guest) => guest.id === guestUrl);
         if (newGuest[0] !== undefined) {
           name.innerText = newGuest[0].guest;
+          spinner.classList.remove("block");
+          spinner.classList.add("hidden");
+          // notFound.classList.remove("block");
+          // notFound.classList.add("hidden");
+          found.classList.remove("hidden");
+          found.classList.add("block");
         } else {
-          found.classList.remove("block");
-          found.classList.add("hidden");
           notFound.classList.remove("hidden");
           notFound.classList.add("block");
+          // found.classList.remove("hidden");
+          // found.classList.add("block");
+          spinner.classList.remove("block");
+          spinner.classList.add("hidden");
         }
       });
   } else {
-    found.classList.remove("block");
-    found.classList.add("hidden");
-    notFound.classList.remove("hidden");
-    notFound.classList.add("block");
+    notFound.classList.remove("block");
+    notFound.classList.add("hidden");
+    // found.classList.remove("hidden");
+    // found.classList.add("block");
   }
 });
 
